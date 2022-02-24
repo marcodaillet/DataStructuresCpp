@@ -14,7 +14,9 @@ You can make and then make diff to compare my containers outputs with the stl co
 For the Map and Set, I had to implement a red-black binary tree, which I think was the more interesting part of this project because of how performing this tree is in comparion of others way of storing data (OlogN time complexity).  
 Exemple of a Red-Black tree :  
   
-Red-black_tree_example svg  
+Red-black_tree_example svg  :
+  
+![Red-black_tree_example svg](https://user-images.githubusercontent.com/55747965/155562232-1a459469-5381-4256-a69e-8b5884768362.png)  
   
 Specs of a Red-Black tree :  
 • Every node in T is either red or black.  
@@ -27,6 +29,7 @@ Respecting those rules are quite the challenge when you try to insert or erase e
 
 Sources : https://algorithmtutor.com/Data-Structures/Tree/Red-Black-Trees/  
   
-Here is a gif of the testing part with my containers on the left column and the stl's on the right :  
+Here is a gif of the testing part with my containers on the left column and the stl's on the right (spoiler its the same):  
+  
 ![Containers](https://user-images.githubusercontent.com/55747965/155561838-6d04d53b-a2ba-4c3b-b86b-ead94e47b074.gif)
 
