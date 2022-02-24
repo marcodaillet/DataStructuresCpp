@@ -6,7 +6,7 @@
 /*   By: mdaillet <mdaillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 13:26:28 by mdaillet          #+#    #+#             */
-/*   Updated: 2022/02/22 14:39:56 by mdaillet         ###   ########.fr       */
+/*   Updated: 2022/02/24 13:46:51 by mdaillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -310,7 +310,7 @@ namespace ft
 				_allocator.construct(_array + i, *(_array + i + 1)); // In the end, only the first destruction will stay
 			}
 			_size--; // Updating the _size
-			_allocator.destroy(_array + --_size);
+			_allocator.destroy(_array + _size);
 			return (iterator(_array + distance)); // Returns the iterator at the position next to the one deleted
 		}
 		iterator erase(iterator first, iterator last) // Erase a range in the vector

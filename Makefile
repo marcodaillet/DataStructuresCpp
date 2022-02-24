@@ -1,63 +1,49 @@
-NAME			= ft_container_tester
-# ==============================================================================
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mdaillet <mdaillet@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/11/20 11:30:49 by mdaillet          #+#    #+#              #
+#    Updated: 2022/02/24 13:03:23 by mdaillet         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-# SRCS =========================================================================
-SOURCES_FOLDER	= ./tester/
+COMPILER = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98 
 
-SOURCES			=	main.cpp \
-					tester.cpp \
-					tester_map.cpp \
-					tester_vector.cpp \
-					tester_stack.cpp
-					
-# ==============================================================================
+NAME = Containers
 
-# INCLUDES =====================================================================
-INCLUDE 		= ./tester/tester.hpp
-# ==============================================================================
-
-# FLAGS ========================================================================
-FLAGS 			= -Wall -Wextra -Werror --std=c++98
-# ==============================================================================
-
-# OBJECTS ======================================================================
-OBJECTS_FOLDER 	= ./tester/objects/
-
-OBJECT			= $(SOURCES:.cpp=.o)
-OBJECTS		 	= $(addprefix $(OBJECTS_FOLDER), $(OBJECT));
-# ==============================================================================
-
-# TESTER =======================================================================
-
-$(OBJECTS_FOLDER)%.o :	$(SOURCES_FOLDER)%.cpp	$(INCLUDE) 
-	@mkdir -p	$(OBJECTS_FOLDER)
-	@echo "Compiling: $<"
-	@clang++ $(FLAGS) -c $< -o $@
-
-$(NAME): $(OBJECTS)
-	@clang++ $(FLAGS) -o $(NAME) $(OBJECTS)
+SRCS = tests/main.cpp tests/ft_test.cpp tests/stl_test.cpp
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
+%.o: %.cpp
+	@echo "\033[0;33mCompiling..."
+	$(COMPILER) $(FLAGS) -c $< -o $@
+
+$(NAME): $(OBJS)
+	@echo "Compiling..."
+	${COMPILER} ${FLAGS} $(OBJS) -o $(NAME)
+	@echo "\033[0m\033[0;32m"
+	@echo "Compilation done ! Execute ./Containers to compare ft and stl."
+	@echo "\033[0m"
+
 clean:
-	@echo "Cleaning: $(OBJECTS_FOLDER)"
-	@rm -rf $(OBJECTS_FOLDER)
-	@echo "Cleaning: ./tester/vectors_output"
-	@rm -rf ./tester/vectors_output
-	@echo "Cleaning: ./tester/stacks_output"
-	@rm -rf ./tester/stacks_output
-	@echo "Cleaning: ./tester/maps_output"
-	@rm -rf ./tester/maps_output
+	rm -f $(OBJS)
 
 fclean: clean
-	@echo "Cleaning: $(NAME)"
-	@rm -f $(NAME)
+	rm -f $(NAME)
+	rm -f *.txt
+
 
 re: fclean all
-# ==============================================================================
 
-# SUP ==========================================================================
 
-run: $(NAME)
-	@./$(NAME)
+test: re
+	./$(NAME)
 
+
+.PHONY: all clean fclean re test

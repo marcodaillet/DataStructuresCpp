@@ -6,7 +6,7 @@
 /*   By: mdaillet <mdaillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 20:06:31 by mdaillet          #+#    #+#             */
-/*   Updated: 2022/02/22 14:20:06 by mdaillet         ###   ########.fr       */
+/*   Updated: 2022/02/24 13:48:58 by mdaillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -549,7 +549,6 @@ class RB_tree
 			std::swap(this->_size, old._size);
 			std::swap(this->_node_alloc, old._node_alloc);
 			std::swap(this->_con_alloc, old._con_alloc);
-			std::swap(this->_size, old._size);
 			std::swap(this->_cmp, old._cmp);
 		}
 		// ##### GETTER FUNCTIONS
