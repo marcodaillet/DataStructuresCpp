@@ -1,4 +1,4 @@
-# Ft_containers
+# C++ Data structures
 
 The goal here was to re-implement four containers of the Standard Template Library in C++: Vector, Stack, Map, and Set.  
 I also implemented an iterators system for each of them (except stack even if we can use it because stack inherits from the vector class), and all C++ tools listed below.  
