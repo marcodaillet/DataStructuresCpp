@@ -27,8 +27,10 @@ Specs of a Red-Black tree :
   
 Respecting those rules are quite the challenge when you try to insert or erase elements, but overall, with documentations, it is pretty straigthforward.  
 
-Sources : https://algorithmtutor.com/Data-Structures/Tree/Red-Black-Trees/  
-  
+Sources :  
+  https://algorithmtutor.com/Data-Structures/Tree/Red-Black-Trees/  
+  https://www.cplusplus.com/
+
 Here is a gif of the testing part with my containers on the left column and the stl's on the right (spoiler its the same):  
   
 ![Containers](https://user-images.githubusercontent.com/55747965/155561838-6d04d53b-a2ba-4c3b-b86b-ead94e47b074.gif)
